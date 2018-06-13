@@ -1,0 +1,28 @@
+.canvas {
+    /* Perfectly square */
+    width: 160px;
+    height: 200px;
+    
+    margin: 0 auto;
+  }
+  
+  .pixel {
+    /* We'll need 64 total pixels in our HTML */
+    width: 4px;
+    height: 4px;
+    float: left;
+    
+  }
+  
+  .red {
+    background-color: #ee0000;
+  }
+  .green {
+    background-color: #00ee00;
+  }
+  .skyblue {
+    background-color: #00eeee;
+  }
+  .background {
+    background-color: #020e0e;
+  }

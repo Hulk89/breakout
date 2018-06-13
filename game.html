@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Breakout Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="game.css" />
+  <script src="https://d3js.org/d3-selection.v1.js"></script>
+  <script src="game_objects.js"></script>
+  <script src="environment.js"></script>
+  
+</head>
+<body>
+    
+  <h1 align="center">Breakout Game</h1>	
+
+
+  <div>
+    <!-- 40, 50을 4배 키우기!-->
+    <div class="canvas background">
+    </div>
+  </div>
+  <script src="render.js"></script>
+  <script>
+  function update() {
+    env.next_state()
+    data = env.data
+      
+    draw(data)
+  }
+  setInterval(update, 30);
+
+  document.body.addEventListener('keydown', function(e) {
+    var keyCode = e.keyCode;
+      if(keyCode==37) {
+        env.bar.action = "left"
+      } else if(keyCode==39) {
+        env.bar.action = "right"
+      }
+  });
+
+  </script>
+</body>
+</html>
