@@ -145,7 +145,7 @@ class Environment {
     return reward
   }
 
-  next_state_for_agent(action) {
+  step(action) {
     // action: right, left
 
     this.bar.action = action

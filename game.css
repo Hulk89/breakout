@@ -4,25 +4,55 @@
     height: 200px;
     
     margin: 0 auto;
-  }
+}
+
+.pixel {
+  /* We'll need 64 total pixels in our HTML */
+  width: 4px;
+  height: 4px;
+  float: left;
   
-  .pixel {
-    /* We'll need 64 total pixels in our HTML */
-    width: 4px;
-    height: 4px;
-    float: left;
-    
-  }
-  
-  .red {
-    background-color: #ee0000;
-  }
-  .green {
-    background-color: #00ee00;
-  }
-  .skyblue {
-    background-color: #00eeee;
-  }
-  .background {
-    background-color: #020e0e;
-  }
+}
+
+.red {
+  background-color: #ee0000;
+}
+.green {
+  background-color: #00ee00;
+}
+.skyblue {
+  background-color: #00eeee;
+}
+.background {
+  background-color: #020e0e;
+}
+.container {
+  display: flex; 
+  justify-content: center;
+}
+  /* Log */
+#log {
+  width: 256px; 
+  height: 90px; 
+  resize: none;
+}
+/* probability plot */
+.plot {
+  width: 128px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+/* Button */
+.button {
+  width: 64px;
+  height: 30px;
+  line-height:30px;
+  background-color: #eeeeee;
+  text-align: center;
+  vertical-align: middle;
+  stroke-width: 1;
+}
+.button.selected {
+  background-color: #ee7373;
+}
