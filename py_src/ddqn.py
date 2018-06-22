@@ -17,7 +17,7 @@ FINAL_EPSILON = 0.1
 INITIAL_REPLAY_SIZE = 20000
 NUM_REPLAY_MEMORY = 400000
 BATCH_SIZE = 32
-TARGET_UPDATE_INTERVAL = 10000 
+TARGET_UPDATE_INTERVAL = 1000 
 LEARNING_RATE = 0.00025
 TRAIN_INTERVAL = 4  # The agent selects 4 actions between successive updates
 SAVE_INTERVAL = 10000
@@ -57,8 +57,6 @@ class Agent():
         self.sess = tf.InteractiveSession()
         self.saver = tf.train.Saver(q_network_weights)
         
-        
-
         self.sess.run(tf.initialize_all_variables())
         self.sess.run(self.update_target_network)
 
@@ -137,8 +135,6 @@ class Agent():
         self.duration += 1
 
         if terminal:
-            # Write summary
-
             # Debug
             if self.t < INITIAL_REPLAY_SIZE:
                 mode = 'random'
