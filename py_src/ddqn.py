@@ -20,7 +20,7 @@ BATCH_SIZE = 32
 TARGET_UPDATE_INTERVAL = 10000 
 LEARNING_RATE = 0.00025
 TRAIN_INTERVAL = 4  # The agent selects 4 actions between successive updates
-
+SAVE_INTERVAL = 10000
 TRAIN=True
 
 class Agent():
@@ -183,7 +183,7 @@ class Agent():
 
         next_action_batch = np.argmax(self.q_values.eval(feed_dict={self.s: next_state_batch}), axis=1)
         target_q_values_batch = self.target_q_values.eval(feed_dict={self.st: next_state_batch})
-        for i in xrange(len(minibatch)):
+        for i in range(len(minibatch)):
             y_batch.append(reward_batch[i] + (1 - terminal_batch[i]) * GAMMA * target_q_values_batch[i][next_action_batch[i]])
 
         loss, _ = self.sess.run([self.loss, self.grads_update], feed_dict={
